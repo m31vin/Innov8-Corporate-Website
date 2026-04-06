@@ -59,55 +59,24 @@ const ContactSection = () => {
               </div>
             </div>
 
-            {/* Form */}
-            <div className="lg:col-span-3 p-10 lg:p-16">
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-slate-600 mb-2">Full Name</label>
-                    <input type="text" placeholder="Your name" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all bg-white text-slate-900 placeholder-slate-400" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-slate-600 mb-2">Company</label>
-                    <input type="text" placeholder="Company name" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all bg-white text-slate-900 placeholder-slate-400" />
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-slate-600 mb-2">Email</label>
-                    <input type="email" placeholder="you@company.com" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all bg-white text-slate-900 placeholder-slate-400" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-slate-600 mb-2">Phone</label>
-                    <input type="tel" placeholder="Phone number" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all bg-white text-slate-900 placeholder-slate-400" />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-slate-600 mb-2">Service Needed</label>
-                  <select className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all bg-white text-slate-900 appearance-none">
-                    <option className="bg-white">Office Setup</option>
-                    <option className="bg-white">Cloud Infrastructure</option>
-                    <option className="bg-white">Business Solutions</option>
-                    <option className="bg-white">IT Consulting</option>
-                    <option className="bg-white">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-slate-600 mb-2">Message</label>
-                  <textarea rows={4} placeholder="Tell us about your requirements" className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all bg-white text-slate-900 placeholder-slate-400 resize-none"></textarea>
-                </div>
-
-                <motion.button 
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full py-4 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-bold text-lg transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)]"
-                >
-                  Send Inquiry
-                </motion.button>
-              </form>
+            {/* Form Link */}
+            <div className="lg:col-span-3 p-10 lg:p-16 flex flex-col items-center justify-center text-center bg-slate-50/50">
+              <div className="w-20 h-20 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mb-6 shadow-sm border border-blue-100">
+                <ExternalLink className="w-10 h-10" />
+              </div>
+              <h4 className="text-3xl font-bold text-slate-900 mb-4">Submit an Inquiry</h4>
+              <p className="text-lg text-slate-600 mb-10 max-w-md">
+                Please click the button below to fill out our contact form. You will be redirected to Google Forms to securely submit your details.
+              </p>
+              <a 
+                href="https://docs.google.com/forms/d/e/1FAIpQLSd7yaN7zkw0MSEACXELGlkUIw6cVvia6QG5_jmu2ay-MjsHYw/viewform?usp=header"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-10 py-5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white font-bold text-lg transition-all shadow-[0_0_20px_rgba(37,99,235,0.3)] flex items-center gap-3 group"
+              >
+                Open Contact Form 
+                <ExternalLink className="w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </a>
             </div>
           </div>
         </div>

@@ -123,23 +123,6 @@ const AboutPage = () => {
                   />
                   <div className="absolute inset-0 bg-white/10 group-hover:bg-transparent transition-colors duration-500"></div>
                 </div>
-                <motion.div 
-                  initial={{ y: 20, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.5 }}
-                  className="absolute -bottom-8 -right-8 bg-white border border-slate-200 p-6 rounded-2xl shadow-xl z-20 hidden md:block"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center">
-                      <Globe className="w-6 h-6 text-blue-600" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-slate-500 font-medium">Global Reach</p>
-                      <p className="text-xl font-bold text-slate-900">50+ Countries</p>
-                    </div>
-                  </div>
-                </motion.div>
               </div>
             </FadeIn>
             

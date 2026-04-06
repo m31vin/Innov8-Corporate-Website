@@ -189,51 +189,6 @@ const DeploymentPage = () => {
         </div>
       </section>
 
-      {/* Core Capabilities */}
-      <section className="py-24 border-t border-slate-200 relative overflow-hidden">
-        <div className="absolute inset-0 bg-slate-50 z-0"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-            <FadeIn direction="right">
-              <div className="p-8 rounded-3xl bg-white border border-slate-200 hover:border-cyan-300 hover:shadow-xl transition-all shadow-sm group">
-                <div className="w-14 h-14 rounded-2xl bg-cyan-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-                  <Monitor className="w-7 h-7 text-cyan-600" />
-                </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">Endpoint Provisioning</h3>
-                <p className="text-slate-600 leading-relaxed mb-6">
-                  Zero-touch deployment for laptops, desktops, and mobile devices using Autopilot and Apple Business Manager. We ensure devices are secure and ready out-of-the-box.
-                </p>
-                <ul className="space-y-3">
-                  {["Asset Tagging", "Image Management", "MDM Enrollment"].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-slate-700">
-                      <CheckCircle2 className="w-5 h-5 text-cyan-500" /> {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </FadeIn>
-            <FadeIn direction="left">
-              <div className="p-8 rounded-3xl bg-white border border-slate-200 hover:border-blue-300 hover:shadow-xl transition-all shadow-sm group">
-                <div className="w-14 h-14 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-                  <Network className="w-7 h-7 text-blue-600" />
-                </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">Network Infrastructure</h3>
-                <p className="text-slate-600 leading-relaxed mb-6">
-                  Design and deployment of robust enterprise networks. From structured cabling to high-density Wi-Fi and SD-WAN implementations.
-                </p>
-                <ul className="space-y-3">
-                  {["Switching & Routing", "Wireless Design", "Firewall Deployment"].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-slate-700">
-                      <CheckCircle2 className="w-5 h-5 text-blue-500" /> {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-24 relative overflow-hidden border-t border-slate-200">
         <div className="absolute inset-0 bg-slate-50 z-0"></div>

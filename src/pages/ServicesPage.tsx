@@ -17,36 +17,44 @@ const ServicesPage = () => {
   
   const services = [
     {
-      icon: <Cloud className="w-8 h-8" />,
-      title: "Cloud Architecture",
-      description: "Enterprise-grade cloud solutions designed for scale, security, and high availability.",
-      features: ["AWS & Azure Migration", "Cloud-Native Development", "Serverless Architecture"],
-      color: "from-blue-500 to-cyan-400",
+      icon: <Monitor className="w-8 h-8 text-white" />,
+      title: "Office Setup",
+      description: "Complete workplace deployment for modern teams.",
+      features: ["Microsoft 365 deployment", "Google Workspace setup", "Domain and email configuration", "Data migration support"],
+      color: "from-blue-500 to-blue-600",
+      bgImage: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
+    },
+    {
+      icon: <Cpu className="w-8 h-8 text-white" />,
+      title: "Device Leasing & Hardware",
+      description: "Reliable sourcing, refresh, and rollout of business devices.",
+      features: ["Hardware procurement", "Device leasing and installation", "Network infrastructure", "Workstation solutions"],
+      color: "from-indigo-500 to-indigo-600",
+      bgImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      icon: <Cloud className="w-8 h-8 text-white" />,
+      title: "Cloud Infrastructure",
+      description: "Scalable cloud and hybrid environments for secure growth.",
+      features: ["Cloud infrastructure deployment", "Hybrid cloud architecture", "Virtual machines and virtualization", "Cloud migration services"],
+      color: "from-cyan-500 to-cyan-600",
       bgImage: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
     },
     {
-      icon: <Shield className="w-8 h-8" />,
-      title: "Cybersecurity",
-      description: "Military-grade protection for your digital assets and infrastructure.",
-      features: ["Zero-Trust Networks", "Threat Intelligence", "Compliance Audits"],
-      color: "from-indigo-500 to-purple-400",
+      icon: <Briefcase className="w-8 h-8 text-white" />,
+      title: "Service & Consulting",
+      description: "Strategic IT guidance aligned with business outcomes.",
+      features: ["Infrastructure assessment", "Technology roadmap planning", "Cybersecurity advisory", "Managed IT services"],
+      color: "from-violet-500 to-violet-600",
       bgImage: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop"
     },
     {
-      icon: <Server className="w-8 h-8" />,
-      title: "Infrastructure",
-      description: "Robust hardware and network provisioning for modern enterprises.",
-      features: ["Data Center Design", "Network Optimization", "Hardware Lifecycle"],
-      color: "from-cyan-500 to-teal-400",
+      icon: <Code className="w-8 h-8 text-white" />,
+      title: "Business Solutions",
+      description: "Digital platforms that automate operations and unlock efficiency.",
+      features: ["Website development", "HRIS system", "Accounting system", "eCommerce and AI platforms"],
+      color: "from-teal-500 to-teal-600",
       bgImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop"
-    },
-    {
-      icon: <Code className="w-8 h-8" />,
-      title: "Custom Software",
-      description: "Bespoke applications built to solve complex business challenges.",
-      features: ["Full-Stack Development", "API Integration", "Legacy Modernization"],
-      color: "from-blue-400 to-indigo-500",
-      bgImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop"
     }
   ];
 
@@ -120,34 +128,65 @@ const ServicesPage = () => {
             {services.map((service, index) => (
               <FadeIn key={index} delay={index * 0.1} direction="up">
                 <motion.div 
-                  whileHover={{ y: -10 }}
-                  className="relative group rounded-3xl overflow-hidden bg-white border border-slate-200 h-full flex flex-col shadow-sm hover:shadow-xl transition-all duration-500"
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className="relative group rounded-[2.5rem] overflow-hidden bg-white border border-slate-200 h-full flex flex-col shadow-sm hover:shadow-2xl hover:shadow-cyan-500/10 transition-all duration-500"
                 >
-                  {/* Background Image that appears on hover */}
-                  <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-10 transition-opacity duration-700">
-                    <img src={service.bgImage} alt={service.title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-                    <div className="absolute inset-0 bg-white/60"></div>
+                  {/* Background Image that appears and scales on hover */}
+                  <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 overflow-hidden">
+                    <motion.img 
+                      src={service.bgImage} 
+                      alt={service.title} 
+                      className="w-full h-full object-cover opacity-20" 
+                      referrerPolicy="no-referrer"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 10, ease: "linear" }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-white/90 to-white/40"></div>
                   </div>
                   
-                  {/* Gradient Overlay */}
+                  {/* Moving Gradient Overlay */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 z-0`}></div>
                   
                   <div className="relative z-10 p-8 lg:p-12 flex flex-col h-full">
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} bg-opacity-10 flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 transition-transform duration-500`}>
-                      <div className="text-slate-700">{service.icon}</div>
-                    </div>
-                    <h3 className="text-3xl font-bold text-slate-900 mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-600 group-hover:to-blue-600 transition-all">{service.title}</h3>
-                    <p className="text-lg text-slate-600 mb-8 leading-relaxed flex-grow group-hover:text-slate-700 transition-colors">
+                    <motion.div 
+                      animate={{ y: [0, -5, 0] }}
+                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: index * 0.2 }}
+                      className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${service.color} flex items-center justify-center mb-8 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}
+                    >
+                      <div className="text-white drop-shadow-md">{service.icon}</div>
+                    </motion.div>
+                    
+                    <h3 className="text-3xl font-bold text-slate-900 mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-600 group-hover:to-blue-600 transition-all duration-300">
+                      {service.title}
+                    </h3>
+                    
+                    <p className="text-lg text-slate-600 mb-8 leading-relaxed flex-grow group-hover:text-slate-800 transition-colors duration-300">
                       {service.description}
                     </p>
+                    
                     <ul className="space-y-4 mb-8">
                       {service.features.map((feature, i) => (
-                        <li key={i} className="flex items-center gap-3 text-slate-700">
-                          <CheckCircle2 className="w-5 h-5 text-cyan-500" />
+                        <motion.li 
+                          key={i} 
+                          initial={{ opacity: 0.8, x: 0 }}
+                          whileHover={{ opacity: 1, x: 5 }}
+                          className="flex items-center gap-3 text-slate-700 font-medium"
+                        >
+                          <div className="flex-shrink-0 w-6 h-6 rounded-full bg-cyan-50 flex items-center justify-center group-hover:bg-cyan-100 transition-colors">
+                            <CheckCircle2 className="w-4 h-4 text-cyan-500" />
+                          </div>
                           {feature}
-                        </li>
+                        </motion.li>
                       ))}
                     </ul>
+                    
+                    <div className="mt-auto pt-6 border-t border-slate-100 group-hover:border-blue-100 transition-colors">
+                      <Link to="/contact" className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors">
+                        Learn more about {service.title.split(' ')[0]}
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </div>
                   </div>
                 </motion.div>
               </FadeIn>

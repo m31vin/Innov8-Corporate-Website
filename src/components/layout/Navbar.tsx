@@ -38,11 +38,9 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Services', href: '/services' },
-    { name: 'About', href: '/about' },
     { name: 'Deployment', href: '/deployment' },
-    { name: 'Cloud & IT', href: '/cloud' },
-    { name: 'Solutions', href: '/solutions' },
     { name: 'Partners', href: '/partners' },
+    { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -54,13 +52,13 @@ const Navbar = () => {
           <Link 
             to="/" 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center gap-2 z-10 hover:opacity-90 transition-opacity cursor-pointer"
+            className="flex items-center gap-3 z-10 hover:opacity-90 transition-opacity cursor-pointer"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center shadow-lg shadow-blue-500/20">
-              <Cpu className="text-white w-6 h-6" />
+            <div className="relative w-10 h-10 flex items-center justify-center">
+              <img src="/innov8_logo.png" alt="Innov8 Logo" className="w-full h-full object-contain" />
             </div>
-            <span className={`text-2xl font-bold tracking-tight ${isScrolled ? 'text-white' : 'text-slate-900'}`}>
-              Innov8
+            <span className={`text-xl md:text-2xl font-bold tracking-tight ${isScrolled ? 'text-white' : 'text-slate-900'}`}>
+              Innov8 IT Solutions
             </span>
           </Link>
 

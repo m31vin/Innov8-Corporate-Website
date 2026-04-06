@@ -24,9 +24,6 @@ const About = () => {
   const stats = [
     { number: 20, suffix: "+", label: "Years Experience" },
     { number: 5, suffix: "", label: "Core Pillars" },
-    { number: 100, suffix: "%", label: "End-to-End" },
-    { number: 50, suffix: "+", label: "Enterprise Clients" },
-    { number: 24, suffix: "/7", label: "Support" },
   ];
 
   return (
@@ -47,8 +44,12 @@ const About = () => {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-700"></div>
                 <div className="flex items-center gap-6 mb-8">
                   <div className="w-24 h-24 rounded-full bg-slate-200 border-4 border-white shadow-lg overflow-hidden flex items-center justify-center group-hover:border-cyan-100 transition-colors duration-300">
-                    {/* Placeholder for Founder Image */}
-                    <Users className="w-10 h-10 text-slate-400 group-hover:text-cyan-500 transition-colors duration-300" />
+                    <img 
+                      src="/photo_no_circle.png" 
+                      alt="Lowenh Acabal - Founder & CEO" 
+                      className="w-full h-full object-cover"
+                      referrerPolicy="no-referrer"
+                    />
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-slate-900 group-hover:text-cyan-700 transition-colors duration-300">Lowenh Acabal</h3>
@@ -96,7 +97,7 @@ const About = () => {
                <p className="text-slate-600">To provide end-to-end infrastructure and business systems that empower modern teams to work efficiently and securely.</p>
             </motion.div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 gap-8">
               {stats.map((stat, idx) => (
                 <motion.div 
                   key={idx}

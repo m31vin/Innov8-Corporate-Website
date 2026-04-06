@@ -11,8 +11,6 @@ import { HomePage } from './pages/HomePage';
 import { ServicesPage } from './pages/ServicesPage';
 import { AboutPage } from './pages/AboutPage';
 import { DeploymentPage } from './pages/DeploymentPage';
-import { CloudPage } from './pages/CloudPage';
-import { SolutionsPage } from './pages/SolutionsPage';
 import { PartnersPage } from './pages/PartnersPage';
 import { ContactPage } from './pages/ContactPage';
 import { Navbar } from './components/layout/Navbar';
@@ -40,8 +38,6 @@ export default function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/deployment" element={<DeploymentPage />} />
-          <Route path="/cloud" element={<CloudPage />} />
-          <Route path="/solutions" element={<SolutionsPage />} />
           <Route path="/partners" element={<PartnersPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
